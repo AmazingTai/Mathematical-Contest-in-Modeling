@@ -1,0 +1,240 @@
+ A=[129.8665,-55.2435,1.7436,-297.3908;52.5130,-5.7480,0.7394,-128.6368;59.7245,393.9655,-0.1244,150.0184;-7.0125,34.5045,0.0284,-9.5229;-4.6130,18.3620,0.0113,-0.3924 ];
+B=[0.2;0.2;225;1];
+C=A * B
+a=C(1,1);
+b=C(2,1);
+
+%%%
+clear
+syms x y z;
+f=-z - x^2 + x - x*y;
+z=solve(f,'z');
+for p =1:length(z)
+ezmesh(z(p));
+axis([-10 10 -10 10 -90 10]);
+
+hold on
+zlabel('z');
+hold
+end   %问题二里的图像。 %13.24。-85.24
+mesh(x,y);
+hold on  %tu
+%%%
+
+
+%%
+syms x y z;
+f = 212.7664*(1-x^2/109.8438)^1.3655 * (1-y^2/(47.0812*(1-x^2/109.8438))) -z;
+z=solve(f,'z');
+for p =1:length(z)
+ezmesh(z(p));
+%surfl(x,y,z)
+hold on
+end
+zlabel('z');
+hold on
+xlabel('x');
+ylabel('y');
+%%. %tu 拱形
+
+
+%%%
+clear
+a=109.8438;
+b=47.0812;
+x=[-3:0.2:3];
+y=[-3:0.2:3]; 
+x=x*a;y=y*b;
+n=length(x);
+m=length(y);
+for i=1:n;
+    for j=1:m;
+    z(i,j)=exp(-(x(i)/a)^2-(y(j)/b)^2); X(i,j)=x(i);Y(i,j)=y(j);
+    end;
+end;
+surf(X,Y,z)
+hold on;
+zlabel('z');
+ylabel('y');
+xlabel('x');
+hold on;
+%%% 圆锥
+
+
+%%
+a=109.8438;
+l1=2/3*a;
+l2=sqrt(3)/3*a;
+x=-a:a ;
+y=exp(-9*x.^2/(2*a*a))
+plot(x,y);
+ylabel('y');
+xlabel('r');
+hold on
+&一峰
+
+%
+a=109.8438;
+l1=2/3*a;
+l2=sqrt(3)/3*a;
+x=-a:a ;
+y=exp(-9*x.^2/(2*a*a))
+ylabel('y');
+xlabel('r');
+hold on
+plot(x,y)
+  
+x1=-a+l1:a+l1 ;
+y1=exp(-9*x1.^2/(2*a*a));
+plot(x1,y);
+hold on
+y2=y+y1;
+plot(x*1.0+l1,y2);
+hold on;
+%  一问两峰
+
+%%
+a=109.8438;
+l1=2/3*a;
+l2=sqrt(3)/3*a;
+x=-a:a ;
+y=exp(-9*x.^2/(2*a*a));
+ylabel('y');
+xlabel('r');
+hold on
+plot(x,y)
+x1=-a+l1:a+l1 ;
+y1=exp(-9*x1.^2/(2*a*a));
+plot(x1,y);
+hold on
+x2=-a+2*l1:a+l1*2;
+y2=exp(-9*x2.^2/(2*a*a));
+plot(x2,y);
+hold on;
+y3=y+y1+y2;
+plot(x*1.0+l1*2,y3);
+hold on;
+%%一问三峰
+
+
+%%
+a=109.8438;
+l1=2/3*a;
+l2=sqrt(3)/3*a;
+x=-a:a ;
+y=exp(-9*x.^2/(2*a*a));
+ylabel('y');
+xlabel('r');
+hold on
+plot(x,y)
+x1=-a+l1:a+l1 ;
+y1=exp(-9*x1.^2/(2*a*a));
+plot(x1,y);
+hold on
+x2=-a+2*l1:a+l1*2;
+y2=exp(-9*x2.^2/(2*a*a));
+plot(x2,y);
+hold on;
+x3=-a+3*l2:a+l2*3;
+y3=exp(-9*x3.^2/(2*a*a));
+plot(x3,y);
+y4=y+y1+y2+y3;
+plot(x*1.0+l2*3,y4);
+hold on;
+%%一问四峰
+
+
+%%
+ A=[129.8665,-55.2435,1.7436,-297.3908;52.5130,-5.7480,0.7394,-128.6368;59.7245,393.9655,-0.1244,150.0184;-7.0125,34.5045,0.0284,-9.5229;-4.6130,18.3620,0.0113,-0.3924 ];
+B=[0.2;0.2;275;1];
+C=A * B
+a=C(1,1);
+b=C(2,1);
+%
+
+%
+a=197.0238;
+x=-a:a ;
+y=exp(-9*x.^2/(2*a*a))
+ylabel('y');
+xlabel('r');
+hold on
+plot(x,y)
+%% 单峰
+
+
+% 
+a=197.0238;
+x=-a:a ;
+y=exp(-9*x.^2/(2*a*a))
+ylabel('y');
+xlabel('r');
+hold on
+plot(x,y)
+
+x1=-a+131.3:a+131.3 ;
+y1=exp(-9*x1.^2/(2*a*a));
+plot(x1,y);
+hold on
+y2=y+y1;
+plot(x*1.0+131,y2);
+hold on;  %tu10
+%
+
+
+
+a=197.0238;
+x=-a:a ;
+y=exp(-9*x.^2/(2*a*a))
+ylabel('y');
+xlabel('r');
+hold on
+plot(x,y)
+
+x1=-a+131.3:a+131.3 ;
+y1=exp(-9*x1.^2/(2*a*a));
+plot(x1,y);
+hold on
+x2=-a+262.6:a+262.6;
+y2=exp(-9*x2.^2/(2*a*a))
+plot(x2,y);
+hold on;
+ 
+y4=y+y1+y2;
+plot(x*1.0+262.6,y4);
+hold on;
+%tu11
+
+
+%
+ l=113.8;
+a=197.0238;
+x=-a:a ;
+y=exp(-9*x.^2/(2*a*a));
+ylabel('y');
+xlabel('r');
+hold on
+plot(x,y)
+
+x1=-a+113.8:a+l ;
+y1=exp(-9*x1.^2/(2*a*a));
+plot(x1,y);
+hold on
+x2=-a+2*l:a+2*l;
+y2=exp(-9*x2.^2/(2*a*a));
+plot(x2,y);
+hold on;
+ 
+x3=-a+3*l:a+3*l;
+y3=exp(-9*x3.^2/(2*a*a));
+
+plot(x3,y);
+hold on;
+ 
+ y4=y+y1+y2+y3;
+ plot(x*1.0+3*l,y4);
+ hold on;
+ % tu12
+
+
+
